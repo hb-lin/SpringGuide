@@ -1,0 +1,45 @@
+spring:
+  application:
+    name: cm-server
+  http:
+    encoding:
+      charset: utf-8
+  datasource:
+    url: jdbc:mysql://localhost:3306/local_test?useSSL=false&serverTimezone=Hongkong&characterEncoding=utf-8&autoReconnect=true
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    #配置数据库类型
+    database: MYSQL
+    #配置是否打印sql
+    show-sql: true
+    #Hibernate相关配置
+    hibernate:
+      #配置级联等级  
+      ddl-auto: update
+      dialect:
+        storage_engine=innodb:
+  # servlet
+  servlet:
+    # 最大支持文件大小
+    multipart:
+      max-file-size: 100MB
+    # 最大支持请求大小
+      max-request-size: 100MB
+  #  多环境配置策略
+  #  多环境配置，若spring.profile.active=develop，在develop.yml里面配置，即可覆盖原有配置；（本地调试可在运行参数添加spring.profiles.active=develop）
+  profiles:
+    active: develop
+    
+server:
+  port: 8080
+  servlet:
+    session:
+      timeout: PT60S
+logging:
+  level:
+    cn.com.tansun: DEBUG
+
+
+

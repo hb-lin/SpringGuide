@@ -1,0 +1,947 @@
+{
+  "class": "GraphLinksModel",
+  "nodeAcWorkflowArray": [
+    {
+      "loc": "-207.99999999999991 -213.79999923706055",
+      "stepType": "service-caller-step",
+      "color": "#345",
+      "stepCode": "start",
+      "text": "开始节点",
+      "category": "Start",
+      "serviceName": "startNode-service",
+      "key": "start"
+    },
+    {
+      "loc": "594.9999999999998 21.000000000000032",
+      "stepType": "end",
+      "stepCode": "end",
+      "text": "结束节点",
+      "category": "End",
+      "serviceName": "end",
+      "key": "end"
+    },
+    {
+      "loc": "-210.99999999999997 79.20000076293944",
+      "paramOutBound": [
+        {
+          "text": "outBound889",
+          "diConfigGuid": "4028ab3e6cf0f558016cf10fadad0006",
+          "diCode": "lhb",
+          "version": "1.0",
+          "backExplain": "0, 1",
+          "stepCode": "outBound",
+          "stepType": "channel-service-caller-step",
+          "serviceName": "dynamicChannel-caller-service",
+          "taskFrom": "outBound3",
+          "taskTo": [
+            "outBound3"
+          ],
+          "taskIndex": "outBound"
+        }
+      ],
+      "stepType": "channel-service-caller-step",
+      "color": "#245",
+      "stepCode": "outBound",
+      "paramArray": [
+        {
+          "text": "outBound889",
+          "diConfigGuid": "4028ab3e6cf0f558016cf10fadad0006",
+          "diCode": "lhb",
+          "version": "1.0",
+          "backExplain": "0, 1",
+          "stepCode": "outBound",
+          "stepType": "channel-service-caller-step",
+          "serviceName": "dynamicChannel-caller-service",
+          "taskFrom": "outBound3",
+          "taskTo": [
+            "outBound3"
+          ],
+          "taskIndex": "outBound"
+        }
+      ],
+      "text": "外呼",
+      "serviceName": "dynamicChannel-caller-service",
+      "key": "outBound",
+      "paramHttpHead": {
+        "text": "httpsHead2",
+        "stepCode": "httpsHead2",
+        "stepType": "service-caller-step",
+        "serviceName": "httpsHead-service",
+        "httpHead": "{\"11\":\"22\"}",
+        "httpsConfig": [
+          {
+            "headKey": "11",
+            "headValue": "22"
+          }
+        ]
+      }
+    },
+    {
+      "loc": "-69 170.20000076293945",
+      "paramSql": {
+        "text": "sqlScript6767676",
+        "stepCode": "sqlScript",
+        "stepType": "service-caller-step",
+        "serviceName": "bizdata-oper-service",
+        "backExplain": "0",
+        "sqlScript": "test01.insertTest1"
+      },
+      "stepType": "service-caller-step",
+      "color": "#245",
+      "stepCode": "sqlScript",
+      "paramArray": [
+        {
+          "rowNum": "",
+          "sqlStartement": "test01.insertTest1",
+          "sqlType": "02",
+          "afterScript": "{\"11\":\"11\"}",
+          "sqlCarryForm": [
+            {
+              "sqlCarryKey": "11",
+              "sqlCarryValue": "11"
+            }
+          ]
+        }
+      ],
+      "text": "SQL脚本",
+      "serviceName": "bizdata-oper-service",
+      "key": "sqlScript"
+    },
+    {
+      "loc": "-90 258.2000007629395",
+      "stepType": "service-caller-step",
+      "color": "#245",
+      "stepCode": "dynamicScript",
+      "paramArray": [
+        {
+          "scriptCond": "11",
+          "scriptParam": "{\"11\":\"22\"}",
+          "scriptServiceName": "000",
+          "javaCarryForm": [
+            {
+              "javaCarryKey": "11",
+              "javaCarryValue": "22"
+            }
+          ]
+        }
+      ],
+      "text": "动态脚本",
+      "serviceName": "script-service-caller-service",
+      "paramJava": {
+        "text": "dynamicScript7878",
+        "stepCode": "dynamicScript",
+        "stepType": "service-caller-step",
+        "serviceName": "script-service-caller-service",
+        "backExplain": "0",
+        "javaFormC": "000"
+      },
+      "key": "dynamicScript"
+    },
+    {
+      "loc": "-212 202.20000076293945",
+      "color": "#245",
+      "stepCode": " branch",
+      "paramArray": [],
+      "paramBranch": {
+        "text": "分支判断lhb01545",
+        "factor": "logicOper-forward",
+        "branchParam": [
+          {
+            "taskTo": "dynamicScript",
+            "value": "if(a<=0)",
+            "forwardType": "logicOper-forward"
+          },
+          {
+            "taskTo": "sqlScript",
+            "value": "if(a>0)",
+            "forwardType": "logicOper-forward"
+          }
+        ]
+      },
+      "paramCopyBranch": {
+        "text": "分支判断lhb01545",
+        "factor": "logicOper-forward",
+        "branchParam": [
+          {
+            "taskTo": "dynamicScript",
+            "value": "if(a<=0)",
+            "forwardType": "logicOper-forward"
+          },
+          {
+            "taskTo": "sqlScript",
+            "value": "if(a>0)",
+            "forwardType": "logicOper-forward"
+          }
+        ]
+      },
+      "text": "分支对象",
+      "serviceName": "",
+      "key": " branch"
+    },
+    {
+      "loc": "187 217.20000076293945",
+      "color": "#245",
+      "paramArray": [],
+      "text": "合并对象",
+      "serviceName": "",
+      "key": "combine"
+    },
+    {
+      "loc": "327.0000000000001 221.2000007629394",
+      "stepType": "service-caller-step",
+      "color": "#245",
+      "stepCode": "logicOper",
+      "paramCopyLogicOpera": [
+        {
+          "text": "logicOper9090",
+          "stepCode": "logicOper",
+          "stepType": "service-caller-step",
+          "serviceName": "logicOper-service",
+          "scriptParam": "c<list.size()",
+          "backExplain": "0, 1",
+          "scriptCode": "",
+          "scriptServiceName": "logicOper",
+          "scriptOrder": "1",
+          "transStandard": ""
+        }
+      ],
+      "paramArray": [
+        {
+          "text": "logicOper9090",
+          "stepCode": "logicOper",
+          "stepType": "service-caller-step",
+          "serviceName": "logicOper-service",
+          "scriptParam": "c<list.size()",
+          "backExplain": "0, 1",
+          "scriptCode": "",
+          "scriptServiceName": "logicOper",
+          "scriptOrder": "1",
+          "transStandard": ""
+        }
+      ],
+      "text": "逻辑运算",
+      "serviceName": "logicOper-service",
+      "paramLogicOpera": "",
+      "key": "logicOper"
+    },
+    {
+      "loc": "219.4999999999999 16.999996185302734",
+      "paramCycle": {},
+      "color": "#245",
+      "stepCode": " branch2",
+      "paramArray": [],
+      "paramBranch": {
+        "text": "循环判断",
+        "factor": "result-forward",
+        "branchParam": [
+          {
+            "taskTo": "insertData",
+            "value": "0",
+            "forwardType": ""
+          },
+          {
+            "taskTo": "httpsHead",
+            "value": "0",
+            "forwardType": ""
+          }
+        ]
+      },
+      "paramCopyBranch": {
+        "text": "循环判断",
+        "factor": "result-forward",
+        "branchParam": [
+          {
+            "taskTo": "insertData",
+            "value": "0",
+            "forwardType": ""
+          },
+          {
+            "taskTo": "httpsHead",
+            "value": "0",
+            "forwardType": ""
+          }
+        ]
+      },
+      "text": "分支对象",
+      "serviceName": "",
+      "key": " branch2"
+    },
+    {
+      "loc": "346.49999999999994 16.999996185302727",
+      "stepType": "service-caller-step",
+      "color": "#245",
+      "stepCode": "insertData",
+      "paramArray": [
+        {
+          "tableName": "T_TEST1",
+          "basePath": "1",
+          "insertType": "02",
+          "columnDetail": "{}",
+          "insertCarry": [
+            {
+              "columnName": "guid",
+              "dataType": "String",
+              "strongId": "guid122211"
+            },
+            {
+              "columnName": "createUser",
+              "dataType": "int",
+              "strongId": "createUser"
+            },
+            {
+              "columnName": "createTime",
+              "dataType": "date",
+              "strongId": "createTime"
+            },
+            {
+              "columnName": "guid",
+              "dataType": "String",
+              "strongId": "guid"
+            },
+            {
+              "columnName": "createUser",
+              "dataType": "int",
+              "strongId": "createUser"
+            },
+            {
+              "columnName": "createTime",
+              "dataType": "date",
+              "strongId": "createTime"
+            }
+          ]
+        }
+      ],
+      "text": "数据落地",
+      "paramInsert": {
+        "text": "insertData56576",
+        "stepCode": "insertData",
+        "stepType": "service-caller-step",
+        "serviceName": "dataInsert-caller-service",
+        "dataInsertInfo": "T_TEST1",
+        "backExplain": "0"
+      },
+      "serviceName": "dataInsert-caller-service",
+      "key": "insertData"
+    },
+    {
+      "loc": "-212 17.20000076293944",
+      "paramHttpHead": {
+        "text": "httpsHead4455545",
+        "stepCode": "httpsHead",
+        "stepType": "service-caller-step",
+        "serviceName": "httpsHead-service",
+        "httpHead": "{\"11\":\"22\"}",
+        "httpsConfig": [
+          {
+            "headKey": "11",
+            "headValue": "22"
+          }
+        ]
+      },
+      "stepType": "service-caller-step",
+      "color": "#245",
+      "stepCode": "httpsHead",
+      "paramArray": [
+        {
+          "headKey": "11",
+          "headValue": "22"
+        }
+      ],
+      "text": "httpsHead",
+      "serviceName": "httpsHead-service",
+      "key": "httpsHead"
+    },
+    {
+      "loc": "38 177",
+      "paramSql": {
+        "text": "sqlScript267676",
+        "stepCode": "sqlScript2",
+        "stepType": "service-caller-step",
+        "serviceName": "bizdata-oper-service",
+        "backExplain": "0",
+        "sqlScript": "test01.insertTest2"
+      },
+      "stepType": "service-caller-step",
+      "color": "#245",
+      "stepCode": "sqlScript2",
+      "paramArray": [
+        {
+          "rowNum": "",
+          "sqlStartement": "test01.insertTest2",
+          "sqlType": "02",
+          "afterScript": "{\"11\":\"11\"}",
+          "sqlCarryForm": [
+            {
+              "sqlCarryKey": "11",
+              "sqlCarryValue": "11"
+            }
+          ]
+        }
+      ],
+      "text": "SQL脚本",
+      "serviceName": "bizdata-oper-service",
+      "key": "sqlScript2"
+    },
+    {
+      "loc": "44 258",
+      "stepType": "service-caller-step",
+      "color": "#245",
+      "stepCode": "dynamicScript2",
+      "paramArray": [
+        {
+          "scriptCond": "1",
+          "scriptParam": "{\"11\":\"22\"}",
+          "scriptServiceName": "111",
+          "javaCarryForm": [
+            {
+              "javaCarryKey": "11",
+              "javaCarryValue": "22"
+            }
+          ]
+        }
+      ],
+      "text": "动态脚本",
+      "serviceName": "script-service-caller-service",
+      "paramJava": {
+        "text": "dynamicScript28989",
+        "stepCode": "dynamicScript2",
+        "stepType": "service-caller-step",
+        "serviceName": "script-service-caller-service",
+        "backExplain": "0",
+        "javaFormC": "111"
+      },
+      "key": "dynamicScript2"
+    },
+    {
+      "loc": "319 280",
+      "stepType": "service-caller-step",
+      "color": "#245",
+      "stepCode": "logicOper2",
+      "paramCopyLogicOpera": [
+        {
+          "text": "logicOper2---",
+          "stepCode": "logicOper2",
+          "stepType": "service-caller-step",
+          "serviceName": "logicOper-service",
+          "scriptParam": "if(true)",
+          "backExplain": "0, 1",
+          "scriptCode": "",
+          "scriptServiceName": "logicOper",
+          "scriptOrder": "1",
+          "transStandard": ""
+        }
+      ],
+      "paramArray": [
+        {
+          "text": "logicOper2---",
+          "stepCode": "logicOper2",
+          "stepType": "service-caller-step",
+          "serviceName": "logicOper-service",
+          "scriptParam": "if(true)",
+          "backExplain": "0, 1",
+          "scriptCode": "",
+          "scriptServiceName": "logicOper",
+          "scriptOrder": "1",
+          "transStandard": ""
+        }
+      ],
+      "text": "逻辑运算",
+      "serviceName": "logicOper-service",
+      "paramLogicOpera": "",
+      "key": "logicOper2"
+    },
+    {
+      "loc": "-203 -73.79999923706055",
+      "paramHttpHead": {
+        "text": "httpsHead1121",
+        "stepCode": "httpsHead2",
+        "stepType": "service-caller-step",
+        "serviceName": "httpsHead-service",
+        "httpHead": "{\"11\":\"22\"}",
+        "httpsConfig": [
+          {
+            "headKey": "11",
+            "headValue": "22"
+          }
+        ]
+      },
+      "stepType": "service-caller-step",
+      "color": "#245",
+      "stepCode": "httpsHead2",
+      "paramArray": [
+        {
+          "headKey": "11",
+          "headValue": "22"
+        },{
+          "headKey": "11",
+          "headValue": "22"
+        }
+      ],
+      "text": "httpsHead",
+      "serviceName": "httpsHead-service",
+      "key": "httpsHead2"
+    },
+    {
+      "loc": "466 -43.79999923706055",
+      "stepType": "service-caller-step",
+      "color": "#245",
+      "stepCode": "insertData2",
+      "paramArray": [
+        {
+          "tableName": "T_TEST1",
+          "basePath": "1",
+          "insertType": "02",
+          "columnDetail": "{\"guid\":\"guid122211\"}",
+          "insertCarry": [
+            {
+              "columnName": "guid",
+              "dataType": "String",
+              "strongId": "guid122211"
+            },
+            {
+              "columnName": "createUser",
+              "dataType": "int",
+              "strongId": "createUser"
+            },
+            {
+              "columnName": "createTime",
+              "dataType": "date",
+              "strongId": "createTime"
+            },
+            {
+              "columnName": "guid",
+              "dataType": "String",
+              "strongId": "guid"
+            },
+            {
+              "columnName": "createUser",
+              "dataType": "int",
+              "strongId": "createUser"
+            },
+            {
+              "columnName": "createTime",
+              "dataType": "date",
+              "strongId": "createTime"
+            }
+          ]
+        }
+      ],
+      "text": "数据落地",
+      "paramInsert": {
+        "text": "insertData7878",
+        "stepCode": "insertData2",
+        "stepType": "service-caller-step",
+        "serviceName": "dataInsert-caller-service",
+        "dataInsertInfo": "T_TEST1",
+        "backExplain": "0"
+      },
+      "serviceName": "dataInsert-caller-service",
+      "key": "insertData2"
+    },
+    {
+      "loc": "-207 138",
+      "paramOutBound": [
+        {
+          "text": "outBound3131313",
+          "diConfigGuid": "2473a2de08294eca81adf86b5bb2b3f8",
+          "diCode": "12",
+          "version": "1.0",
+          "backExplain": "0, 1",
+          "stepCode": "outBound3",
+          "stepType": "channel-service-caller-step",
+          "serviceName": "dynamicChannel-caller-service",
+          "taskFrom": " branch",
+          "taskTo": [
+            " branch"
+          ],
+          "taskIndex": "outBound3"
+        }
+      ],
+      "stepType": "channel-service-caller-step",
+      "color": "#245",
+      "stepCode": "outBound3",
+      "paramArray": [
+        {
+          "text": "outBound3131313",
+          "diConfigGuid": "2473a2de08294eca81adf86b5bb2b3f8",
+          "diCode": "12",
+          "version": "1.0",
+          "backExplain": "0, 1",
+          "stepCode": "outBound3",
+          "stepType": "channel-service-caller-step",
+          "serviceName": "dynamicChannel-caller-service",
+          "taskFrom": " branch",
+          "taskTo": [
+            " branch"
+          ],
+          "taskIndex": "outBound3"
+        }
+      ],
+      "text": "外呼",
+      "serviceName": "dynamicChannel-caller-service",
+      "key": "outBound3"
+    }
+  ],
+  "linkAcWorkflowArray": [
+    {
+      "forwardType": "logicOper-forward",
+      "from": " branch",
+      "to": "dynamicScript",
+      "value": "if(a<=0)",
+      "points": [
+        -132,
+        218.20000076293945,
+        -122,
+        218.20000076293945,
+        -111,
+        218.20000076293945,
+        -111,
+        274.20000076293957,
+        -100,
+        274.20000076293957,
+        -90,
+        274.20000076293957
+      ]
+    },
+    {
+      "forwardType": "logicOper-forward",
+      "from": " branch",
+      "to": "sqlScript",
+      "value": "if(a>0)",
+      "points": [
+        -132,
+        218.20000076293945,
+        -122,
+        218.20000076293945,
+        -100.5,
+        218.20000076293945,
+        -100.5,
+        186.20000076293942,
+        -78.99999999999999,
+        186.20000076293942,
+        -68.99999999999999,
+        186.20000076293942
+      ]
+    },
+    {
+      "forwardType": "result-forward",
+      "from": " branch2",
+      "to": "insertData",
+      "value": "0",
+      "points": [
+        299.4999999999999,
+        32.999996185302734,
+        309.4999999999999,
+        32.999996185302734,
+        322.9999999999999,
+        32.999996185302734,
+        322.9999999999999,
+        32.99999618530273,
+        336.49999999999994,
+        32.99999618530273,
+        346.49999999999994,
+        32.99999618530273
+      ]
+    },
+    {
+      "forwardType": "result-forward",
+      "from": " branch2",
+      "to": "httpsHead",
+      "value": "0",
+      "points": [
+        219.4999999999999,
+        32.999996185302734,
+        209.4999999999999,
+        32.999996185302734,
+        43.74999999999994,
+        32.999996185302734,
+        43.74999999999994,
+        33.20000076293944,
+        -122,
+        33.20000076293944,
+        -132,
+        33.20000076293944
+      ]
+    },
+    {
+      "forwardType": "result-forward",
+      "from": "httpsHead",
+      "to": "outBound",
+      "value": "*",
+      "points": [
+        -172,
+        49.20000076293944,
+        -172,
+        59.20000076293944,
+        -172,
+        64.20000076293942,
+        -171,
+        64.20000076293942,
+        -171,
+        69.20000076293942,
+        -171,
+        79.20000076293942
+      ]
+    },
+    {
+      "forwardType": "result-forward",
+      "from": "dynamicScript",
+      "to": "dynamicScript2",
+      "value": "*",
+      "points": [
+        -10,
+        274.20000076293957,
+        0,
+        274.20000076293957,
+        17,
+        274.20000076293957,
+        17,
+        274,
+        34,
+        274,
+        44,
+        274
+      ]
+    },
+    {
+      "forwardType": "result-forward",
+      "from": "sqlScript",
+      "to": "sqlScript2",
+      "value": "*",
+      "points": [
+        11.000000000000014,
+        186.20000076293942,
+        21.000000000000014,
+        186.20000076293942,
+        24.500000000000007,
+        186.20000076293942,
+        24.500000000000007,
+        193,
+        28,
+        193,
+        38,
+        193
+      ]
+    },
+    {
+      "forwardType": "result-forward",
+      "from": "sqlScript2",
+      "to": "combine",
+      "value": "*",
+      "points": [
+        118,
+        193,
+        128,
+        193,
+        152.5,
+        193,
+        152.5,
+        233.20000076293948,
+        177,
+        233.20000076293948,
+        187,
+        233.20000076293948
+      ]
+    },
+    {
+      "forwardType": "result-forward",
+      "from": "dynamicScript2",
+      "to": "combine",
+      "value": "*",
+      "points": [
+        124,
+        274,
+        134,
+        274,
+        155.5,
+        274,
+        155.5,
+        233.20000076293948,
+        177,
+        233.20000076293948,
+        187,
+        233.20000076293948
+      ]
+    },
+    {
+      "forwardType": "result-forward",
+      "from": "combine",
+      "to": "logicOper2",
+      "value": "*",
+      "points": [
+        267,
+        233.20000076293948,
+        277,
+        233.20000076293948,
+        293,
+        233.20000076293948,
+        293,
+        296,
+        309,
+        296,
+        319,
+        296
+      ]
+    },
+    {
+      "forwardType": "result-forward",
+      "from": "logicOper2",
+      "to": "logicOper",
+      "value": "*",
+      "points": [
+        359,
+        280,
+        359,
+        270,
+        359,
+        266.60000038146967,
+        367.0000000000001,
+        266.60000038146967,
+        367.0000000000001,
+        263.20000076293934,
+        367.0000000000001,
+        253.20000076293937
+      ]
+    },
+    {
+      "forwardType": "result-forward",
+      "from": "start",
+      "to": "httpsHead2",
+      "value": "*",
+      "points": [
+        -167.99999999999991,
+        -181.79999923706055,
+        -167.99999999999991,
+        -171.79999923706055,
+        -167.99999999999991,
+        -127.79999923706055,
+        -163,
+        -127.79999923706055,
+        -163,
+        -83.79999923706055,
+        -163,
+        -73.79999923706055
+      ]
+    },
+    {
+      "forwardType": "result-forward",
+      "from": "httpsHead2",
+      "to": "httpsHead",
+      "value": "0",
+      "points": [
+        -163,
+        -41.79999923706055,
+        -163,
+        -31.799999237060547,
+        -163,
+        -12.299999237060554,
+        -172,
+        -12.299999237060554,
+        -172,
+        7.200000762939439,
+        -172,
+        17.20000076293944
+      ]
+    },
+    {
+      "forwardType": "result-forward",
+      "from": "insertData",
+      "to": "insertData2",
+      "value": "*",
+      "points": [
+        426.49999999999994,
+        32.99999618530273,
+        436.49999999999994,
+        32.99999618530273,
+        446.25,
+        32.99999618530273,
+        446.25,
+        -27.799999237060547,
+        456,
+        -27.799999237060547,
+        466,
+        -27.799999237060547
+      ]
+    },
+    {
+      "forwardType": "result-forward",
+      "from": "insertData2",
+      "to": "end",
+      "value": "*",
+      "points": [
+        546,
+        -27.799999237060547,
+        556,
+        -27.799999237060547,
+        570.4999999999999,
+        -27.799999237060547,
+        570.4999999999999,
+        37.00000000000003,
+        584.9999999999998,
+        37.00000000000003,
+        594.9999999999998,
+        37.00000000000003
+      ]
+    },
+    {
+      "forwardType": "result-forward",
+      "from": "outBound",
+      "to": "outBound3",
+      "value": "*",
+      "points": [
+        -170.99999999999997,
+        111.20000076293944,
+        -170.99999999999997,
+        121.20000076293944,
+        -170.99999999999997,
+        124.60000038146973,
+        -167,
+        124.60000038146973,
+        -167,
+        128,
+        -167,
+        138
+      ]
+    },
+    {
+      "forwardType": "result-forward",
+      "from": "outBound3",
+      "to": " branch",
+      "value": "*",
+      "points": [
+        -167,
+        170,
+        -167,
+        180,
+        -167,
+        186.10000038146973,
+        -172,
+        186.10000038146973,
+        -172,
+        192.20000076293945,
+        -172,
+        202.20000076293945
+      ]
+    },
+    {
+      "from": "logicOper",
+      "to": " branch2",
+      "points": [
+        367.0000000000001,
+        221.2000007629394,
+        367.0000000000001,
+        211.2000007629394,
+        367.0000000000001,
+        135.09999847412107,
+        259.4999999999999,
+        135.09999847412107,
+        259.4999999999999,
+        58.999996185302734,
+        259.4999999999999,
+        48.999996185302734
+      ],
+      "value": "*",
+      "forwardType": "result-forward"
+    }
+  ]
+}

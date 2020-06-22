@@ -1,0 +1,404 @@
+{
+  "linkAcWorkflowArray": [
+    {
+      "forwardType": "result-forward",
+      "from": "start",
+      "to": "httpsHead",
+      "value": "*",
+      "points": [
+        -171.99999999999997,
+        -38.79999923706055,
+        -171.99999999999997,
+        -28.799999237060547,
+        -171.99999999999997,
+        -10.799999237060547,
+        -172,
+        -10.799999237060547,
+        -172,
+        7.200000762939453,
+        -172,
+        17.200000762939453
+      ]
+    },
+    {
+      "forwardType": "result-forward",
+      "from": "outBound",
+      "to": " branch",
+      "value": "*",
+      "points": [
+        -172,
+        130.20000076293945,
+        -172,
+        140.20000076293945,
+        -172,
+        166.20000076293945,
+        -172,
+        166.20000076293945,
+        -172,
+        192.20000076293942,
+        -172,
+        202.20000076293942
+      ]
+    },
+    {
+      "forwardType": "logicOper-forward",
+      "from": " branch",
+      "to": "dynamicScript",
+      "value": "if(a<=0)",
+      "points": [
+        -132,
+        218.20000076293942,
+        -122,
+        218.20000076293942,
+        -95.5,
+        218.20000076293942,
+        -95.5,
+        270.2000007629395,
+        -69,
+        270.2000007629395,
+        -59,
+        270.2000007629395
+      ]
+    },
+    {
+      "forwardType": "logicOper-forward",
+      "from": " branch",
+      "to": "sqlScript",
+      "value": "if(a>0)",
+      "points": [
+        -132,
+        218.20000076293942,
+        -122,
+        218.20000076293942,
+        -96.5,
+        218.20000076293942,
+        -96.5,
+        193.20000076293948,
+        -70.99999999999999,
+        193.20000076293948,
+        -60.999999999999986,
+        193.20000076293948
+      ]
+    },
+    {
+      "forwardType": "result-forward",
+      "from": "sqlScript",
+      "to": "combine",
+      "value": "*",
+      "points": [
+        19.000000000000014,
+        193.20000076293948,
+        29.000000000000014,
+        193.20000076293948,
+        65,
+        193.20000076293948,
+        65,
+        227.20000076293945,
+        101,
+        227.20000076293945,
+        111,
+        227.20000076293945
+      ]
+    },
+    {
+      "forwardType": "result-forward",
+      "from": "dynamicScript",
+      "to": "combine",
+      "value": "*",
+      "points": [
+        21,
+        270.2000007629395,
+        31,
+        270.2000007629395,
+        66,
+        270.2000007629395,
+        66,
+        227.20000076293945,
+        101,
+        227.20000076293945,
+        111,
+        227.20000076293945
+      ]
+    },
+    {
+      "forwardType": "result-forward",
+      "from": "combine",
+      "to": "logicOper",
+      "value": "*",
+      "points": [
+        191,
+        227.20000076293945,
+        201,
+        227.20000076293945,
+        205.50000000000006,
+        227.20000076293945,
+        205.50000000000006,
+        227.20000076293945,
+        210.00000000000009,
+        227.20000076293945,
+        220.00000000000009,
+        227.20000076293945
+      ]
+    },
+    {
+      "forwardType": "result-forward",
+      "from": " branch2",
+      "to": "insertData",
+      "value": "0",
+      "points": [
+        299.4999999999999,
+        32.999996185302734,
+        309.4999999999999,
+        32.999996185302734,
+        322.9999999999999,
+        32.999996185302734,
+        322.9999999999999,
+        32.99999618530273,
+        336.49999999999994,
+        32.99999618530273,
+        346.49999999999994,
+        32.99999618530273
+      ]
+    },
+    {
+      "forwardType": "result-forward",
+      "from": "insertData",
+      "to": "end",
+      "value": "*",
+      "points": [
+        426.49999999999994,
+        32.99999618530273,
+        436.49999999999994,
+        32.99999618530273,
+        452.75,
+        32.99999618530273,
+        452.75,
+        33.00000000000002,
+        469,
+        33.00000000000002,
+        479,
+        33.00000000000002
+      ]
+    },
+    {
+      "forwardType": "result-forward",
+      "from": " branch2",
+      "to": "httpsHead",
+      "value": "*",
+      "points": [
+        219.4999999999999,
+        32.999996185302734,
+        209.4999999999999,
+        32.999996185302734,
+        43.74999999999994,
+        32.999996185302734,
+        43.74999999999994,
+        33.20000076293944,
+        -122,
+        33.20000076293944,
+        -132,
+        33.20000076293944
+      ]
+    },
+    {
+      "forwardType": "result-forward",
+      "from": "logicOper",
+      "to": "cycle",
+      "value": "*",
+      "points": [
+        260.0000000000001,
+        211.20000076293945,
+        260.0000000000001,
+        201.20000076293945,
+        260.0000000000001,
+        191.20000076293945,
+        260,
+        191.20000076293945,
+        260,
+        181.20000076293945,
+        260,
+        171.20000076293945
+      ]
+    },
+    {
+      "forwardType": "result-forward",
+      "from": "cycle",
+      "to": " branch2",
+      "value": "*",
+      "points": [
+        260,
+        139.20000076293945,
+        260,
+        129.20000076293945,
+        260,
+        94.0999984741211,
+        259.4999999999999,
+        94.0999984741211,
+        259.4999999999999,
+        58.999996185302734,
+        259.4999999999999,
+        48.999996185302734
+      ]
+    },
+    {
+      "forwardType": "result-forward",
+      "from": "httpsHead",
+      "to": "outBound",
+      "value": "*",
+      "points": [
+        -172,
+        49.20000076293945,
+        -172,
+        59.20000076293945,
+        -172,
+        73.70000076293945,
+        -172,
+        73.70000076293945,
+        -172,
+        88.20000076293945,
+        -172,
+        98.20000076293945
+      ]
+    }
+  ],
+  "nodeAcWorkflowArray": [
+    {
+      "loc": "-211.99999999999991 -70.79999923706055",
+      "stepType": "service-caller-step",
+      "color": "#345",
+      "stepCode": "start",
+      "text": "开始节点",
+      "category": "Start",
+      "serviceName": "startNode-service",
+      "key": "start"
+    },
+    {
+      "loc": "478.9999999999999 17.00000000000003",
+      "stepType": "end",
+      "stepCode": "end",
+      "text": "结束节点",
+      "category": "End",
+      "serviceName": "end",
+      "key": "end"
+    },
+    {
+      "loc": "-212 98.20000076293942",
+      "paramOutBound": {},
+      "stepType": "channel-service-caller-step",
+      "color": "#245",
+      "stepCode": "outBound",
+      "paramArray": [],
+      "text": "外呼",
+      "serviceName": "dynamicChannel-caller-service",
+      "key": "outBound"
+    },
+    {
+      "loc": "-60.999999999999986 177.20000076293942",
+      "paramSql": {
+        "text": "sqlScript"
+      },
+      "stepType": "service-caller-step",
+      "color": "#245",
+      "stepCode": "sqlScript",
+      "paramArray": [],
+      "text": "SQL脚本",
+      "serviceName": "bizdata-oper-service",
+      "key": "sqlScript"
+    },
+    {
+      "loc": "-59 254.20000076293957",
+      "stepType": "service-caller-step",
+      "color": "#245",
+      "stepCode": "dynamicScript",
+      "paramArray": [],
+      "text": "动态脚本",
+      "serviceName": "script-service-caller-service",
+      "paramJava": {
+        "text": "dynamicScript"
+      },
+      "key": "dynamicScript"
+    },
+    {
+      "loc": "-212 202.20000076293945",
+      "color": "#245",
+      "stepCode": " branch",
+      "paramArray": [],
+      "paramBranch": {
+        "text": "分支判断lhb01"
+      },
+      "text": "分支对象",
+      "serviceName": "",
+      "key": " branch"
+    },
+    {
+      "loc": "111 211.20000076293948",
+      "color": "#245",
+      "paramArray": [],
+      "text": "合并对象",
+      "serviceName": "",
+      "key": "combine"
+    },
+    {
+      "loc": "220.00000000000014 211.20000076293937",
+      "stepType": "service-caller-step",
+      "color": "#245",
+      "stepCode": "logicOper",
+      "paramArray": [],
+      "text": "逻辑运算",
+      "serviceName": "logicOper-service",
+      "paramLogicOpera": "",
+      "key": "logicOper"
+    },
+    {
+      "loc": "220 139.20000076293945",
+      "paramCycle": {},
+      "stepType": "service-caller-step",
+      "color": "#245",
+      "stepCode": "cycle",
+      "paramArray": [],
+      "text": "循环",
+      "serviceName": "cycle-caller-service",
+      "key": "cycle"
+    },
+    {
+      "loc": "219.4999999999999 16.999996185302734",
+      "paramCycle": {},
+      "color": "#245",
+      "stepCode": " branch2",
+      "paramArray": [],
+      "paramBranch": {
+        "text": "循环判断"
+      },
+      "text": "分支对象",
+      "serviceName": "",
+      "key": " branch2"
+    },
+    {
+      "loc": "346.49999999999994 16.999996185302727",
+      "stepType": "service-caller-step",
+      "color": "#245",
+      "stepCode": "insertData",
+      "paramArray": [],
+      "text": "数据落地",
+      "paramInsert": {
+        "text": "insertData"
+      },
+      "serviceName": "dataInsert-caller-service",
+      "key": "insertData"
+    },
+    {
+      "loc": "-212 17.20000076293944",
+      "paramHttpHead": {
+        "text": "httpsHead"
+      },
+      "stepType": "service-caller-step",
+      "color": "#245",
+      "stepCode": "httpsHead",
+      "paramArray": [],
+      "text": "httpsHead",
+      "serviceName": "httpsHead-service",
+      "key": "httpsHead"
+    }
+  ],
+  "class": "GraphLinksModel"
+}
